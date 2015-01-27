@@ -1,2 +1,1 @@
-# fpgaSDdriver
-# fpgaSDdriver
+#fpgaSDdriver is an SD Card driver for a cyclone II FPGA. It's meant to be simpler than the provided drivers, using less of the FPGA's hardware and only accomplishing the requirements of the fly eye algorithm.
