@@ -1,0 +1,18 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity setToSpi is
+port (
+	
+);
+end setToSpi;
+
+architecture setToSpi of setToSpi is
+process(initialized = '0')
+begin
+	for counter in 0 to 78 loop
+		SD_DAT3 <= '0';
+		pin5 <= '0';
+		SD_CMD <= '1';
+		pin1 <= '1';
+	end loop;

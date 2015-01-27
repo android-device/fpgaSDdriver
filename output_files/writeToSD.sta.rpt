@@ -1,0 +1,1606 @@
+TimeQuest Timing Analyzer report for writeToSD
+Sat Jul 19 18:46:15 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clkDivider:clkDiv|tempClk'
+ 12. Slow Model Setup: 'CLOCK_50'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Hold: 'clkDivider:clkDiv|tempClk'
+ 15. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 16. Slow Model Minimum Pulse Width: 'clkDivider:clkDiv|tempClk'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Propagation Delay
+ 22. Minimum Propagation Delay
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'clkDivider:clkDiv|tempClk'
+ 29. Fast Model Setup: 'CLOCK_50'
+ 30. Fast Model Hold: 'CLOCK_50'
+ 31. Fast Model Hold: 'clkDivider:clkDiv|tempClk'
+ 32. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 33. Fast Model Minimum Pulse Width: 'clkDivider:clkDiv|tempClk'
+ 34. Setup Times
+ 35. Hold Times
+ 36. Clock to Output Times
+ 37. Minimum Clock to Output Times
+ 38. Propagation Delay
+ 39. Minimum Propagation Delay
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Progagation Delay
+ 46. Minimum Progagation Delay
+ 47. Setup Transfers
+ 48. Hold Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; writeToSD                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; clkDivider:clkDiv|tempClk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clkDivider:clkDiv|tempClk } ;
+; CLOCK_50                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                  ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                                  ;
++------------+-----------------+---------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                ; Note                                                          ;
++------------+-----------------+---------------------------+---------------------------------------------------------------+
+; 79.65 MHz  ; 79.65 MHz       ; clkDivider:clkDiv|tempClk ;                                                               ;
+; 549.45 MHz ; 420.17 MHz      ; CLOCK_50                  ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+---------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Slow Model Setup Summary                            ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; clkDivider:clkDiv|tempClk ; -11.555 ; -1391.962     ;
+; CLOCK_50                  ; -0.820  ; -4.172        ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Slow Model Hold Summary                            ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; CLOCK_50                  ; -2.558 ; -2.558        ;
+; clkDivider:clkDiv|tempClk ; 0.391  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary             ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; CLOCK_50                  ; -1.380 ; -9.380        ;
+; clkDivider:clkDiv|tempClk ; -0.500 ; -167.000      ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clkDivider:clkDiv|tempClk'                                                                                                                              ;
++---------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack   ; From Node                  ; To Node                            ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; -11.555 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.585     ;
+; -11.524 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.554     ;
+; -11.494 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.528     ;
+; -11.488 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.518     ;
+; -11.484 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.514     ;
+; -11.459 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.489     ;
+; -11.457 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.491     ;
+; -11.453 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.483     ;
+; -11.423 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.457     ;
+; -11.417 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.447     ;
+; -11.413 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.443     ;
+; -11.388 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.418     ;
+; -11.386 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.420     ;
+; -11.382 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.412     ;
+; -11.373 ; writeData:wrtSD|bitNum[8]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.403     ;
+; -11.352 ; writeData:wrtSD|bitNum[25] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.382     ;
+; -11.352 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.386     ;
+; -11.346 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.376     ;
+; -11.344 ; writeData:wrtSD|bitNum[11] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.374     ;
+; -11.342 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.372     ;
+; -11.330 ; writeData:wrtSD|bitNum[18] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.364     ;
+; -11.317 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.347     ;
+; -11.315 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.349     ;
+; -11.311 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.341     ;
+; -11.302 ; writeData:wrtSD|bitNum[8]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.332     ;
+; -11.293 ; writeData:wrtSD|bitNum[19] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.327     ;
+; -11.288 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.321     ;
+; -11.284 ; writeData:wrtSD|bitNum[29] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.318     ;
+; -11.284 ; writeData:wrtSD|bitNum[15] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.314     ;
+; -11.281 ; writeData:wrtSD|bitNum[25] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.311     ;
+; -11.281 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.315     ;
+; -11.275 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.305     ;
+; -11.273 ; writeData:wrtSD|bitNum[11] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.303     ;
+; -11.271 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.301     ;
+; -11.259 ; writeData:wrtSD|bitNum[18] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.293     ;
+; -11.249 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.285     ;
+; -11.247 ; writeData:wrtSD|bitNum[27] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.277     ;
+; -11.246 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.276     ;
+; -11.244 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.278     ;
+; -11.240 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.270     ;
+; -11.238 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.261     ;
+; -11.238 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.261     ;
+; -11.237 ; writeData:wrtSD|state[12]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.270     ;
+; -11.231 ; writeData:wrtSD|bitNum[8]  ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.261     ;
+; -11.222 ; writeData:wrtSD|state[6]   ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.255     ;
+; -11.222 ; writeData:wrtSD|bitNum[19] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.256     ;
+; -11.217 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.250     ;
+; -11.213 ; writeData:wrtSD|bitNum[29] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.247     ;
+; -11.213 ; writeData:wrtSD|bitNum[15] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.243     ;
+; -11.210 ; writeData:wrtSD|bitNum[25] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.240     ;
+; -11.210 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.244     ;
+; -11.209 ; writeData:wrtSD|bitNum[7]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.005     ; 12.240     ;
+; -11.207 ; writeData:wrtSD|bitNum[21] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.241     ;
+; -11.207 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.230     ;
+; -11.207 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.230     ;
+; -11.206 ; writeData:wrtSD|bitNum[6]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.005     ; 12.237     ;
+; -11.204 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.234     ;
+; -11.202 ; writeData:wrtSD|bitNum[11] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.232     ;
+; -11.200 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[26]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.230     ;
+; -11.198 ; writeData:wrtSD|state[27]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.234     ;
+; -11.196 ; writeData:wrtSD|state[20]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.232     ;
+; -11.194 ; writeData:wrtSD|counter[0] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 12.223     ;
+; -11.188 ; writeData:wrtSD|bitNum[18] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.222     ;
+; -11.186 ; writeData:wrtSD|state[3]   ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.219     ;
+; -11.180 ; writeData:wrtSD|bitNum[31] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.214     ;
+; -11.178 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.214     ;
+; -11.177 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.204     ;
+; -11.177 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.204     ;
+; -11.176 ; writeData:wrtSD|bitNum[27] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.206     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[18]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[19]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[20]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[21]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[22]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[23]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[24]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[25]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[16]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[17]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[14] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.175 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.205     ;
+; -11.173 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.207     ;
+; -11.171 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[21] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.198     ;
+; -11.171 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[22] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.198     ;
+; -11.171 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[23] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.198     ;
+; -11.171 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[24] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 12.198     ;
+; -11.171 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.194     ;
+; -11.171 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.013     ; 12.194     ;
+; -11.171 ; writeData:wrtSD|bitNum[22] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.205     ;
+; -11.169 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[26]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.199     ;
+; -11.166 ; writeData:wrtSD|bitNum[10] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.196     ;
+; -11.166 ; writeData:wrtSD|state[12]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.199     ;
+; -11.165 ; writeData:wrtSD|state[25]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.201     ;
+; -11.160 ; writeData:wrtSD|bitNum[8]  ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.190     ;
+; -11.157 ; writeData:wrtSD|state[16]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 12.193     ;
+; -11.153 ; writeData:wrtSD|state[15]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.186     ;
+; -11.151 ; writeData:wrtSD|state[6]   ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.184     ;
+; -11.151 ; writeData:wrtSD|bitNum[19] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 12.185     ;
+; -11.146 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.003     ; 12.179     ;
+; -11.144 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[18]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.006     ; 12.174     ;
++---------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                            ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -0.820 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.856      ;
+; -0.784 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.820      ;
+; -0.749 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.785      ;
+; -0.723 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.759      ;
+; -0.713 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.749      ;
+; -0.678 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.714      ;
+; -0.673 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.709      ;
+; -0.642 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.678      ;
+; -0.607 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.643      ;
+; -0.602 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.638      ;
+; -0.587 ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.623      ;
+; -0.571 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.607      ;
+; -0.569 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.605      ;
+; -0.564 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.600      ;
+; -0.536 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.572      ;
+; -0.532 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.568      ;
+; -0.531 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.567      ;
+; -0.500 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.536      ;
+; -0.493 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.529      ;
+; -0.461 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.497      ;
+; -0.460 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.496      ;
+; -0.451 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.487      ;
+; -0.423 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.459      ;
+; -0.422 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.458      ;
+; -0.383 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.419      ;
+; -0.293 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.329      ;
+; -0.144 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.180      ;
+; -0.076 ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.112      ;
+; -0.075 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.111      ;
+; -0.074 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.110      ;
+; -0.059 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.095      ;
+; -0.040 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.076      ;
+; -0.039 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.075      ;
+; -0.025 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 1.061      ;
+; 0.379  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[0] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.657      ;
+; 2.828  ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 0.500        ; 2.699      ; 0.657      ;
+; 3.328  ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 1.000        ; 2.699      ; 0.657      ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                             ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -2.558 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 0.000        ; 2.699      ; 0.657      ;
+; -2.058 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; -0.500       ; 2.699      ; 0.657      ;
+; 0.391  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[0] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.795  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.809  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.829  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.095      ;
+; 0.844  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846  ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.914  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.180      ;
+; 1.063  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.329      ;
+; 1.153  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.419      ;
+; 1.192  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.458      ;
+; 1.193  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.221  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.487      ;
+; 1.230  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.496      ;
+; 1.231  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.497      ;
+; 1.263  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.529      ;
+; 1.270  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.536      ;
+; 1.301  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.567      ;
+; 1.302  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.568      ;
+; 1.306  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.572      ;
+; 1.334  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.600      ;
+; 1.339  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.605      ;
+; 1.341  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.607      ;
+; 1.357  ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.623      ;
+; 1.372  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.638      ;
+; 1.377  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.643      ;
+; 1.412  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.678      ;
+; 1.443  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.709      ;
+; 1.448  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.714      ;
+; 1.483  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.749      ;
+; 1.493  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.759      ;
+; 1.519  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.785      ;
+; 1.554  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.820      ;
+; 1.590  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.856      ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clkDivider:clkDiv|tempClk'                                                                                                                                       ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; 0.391 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|replyStarted        ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[1]   ; writeData:wrtSD|responseFromSD[1]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[4]   ; writeData:wrtSD|responseFromSD[4]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[3]   ; writeData:wrtSD|responseFromSD[3]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[2]   ; writeData:wrtSD|responseFromSD[2]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[0]   ; writeData:wrtSD|responseFromSD[0]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[5]   ; writeData:wrtSD|responseFromSD[5]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|expectedResponse[0] ; writeData:wrtSD|expectedResponse[0] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|responseFromSD[6]   ; writeData:wrtSD|responseFromSD[6]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|expectedResponse[6] ; writeData:wrtSD|expectedResponse[6] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[9]   ; writeData:wrtSD|currentAddress[9]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[10]  ; writeData:wrtSD|currentAddress[10]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[12]  ; writeData:wrtSD|currentAddress[12]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[13]  ; writeData:wrtSD|currentAddress[13]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[14]  ; writeData:wrtSD|currentAddress[14]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[15]  ; writeData:wrtSD|currentAddress[15]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[16]  ; writeData:wrtSD|currentAddress[16]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[19]  ; writeData:wrtSD|currentAddress[19]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[21]  ; writeData:wrtSD|currentAddress[21]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[22]  ; writeData:wrtSD|currentAddress[22]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[23]  ; writeData:wrtSD|currentAddress[23]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|currentAddress[24]  ; writeData:wrtSD|currentAddress[24]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|SD_DAT3             ; writeData:wrtSD|SD_DAT3             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[7]     ; writeData:wrtSD|dataGathered[7]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[6]     ; writeData:wrtSD|dataGathered[6]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[4]     ; writeData:wrtSD|dataGathered[4]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[5]     ; writeData:wrtSD|dataGathered[5]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[3]     ; writeData:wrtSD|dataGathered[3]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[1]     ; writeData:wrtSD|dataGathered[1]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|dataGathered[2]     ; writeData:wrtSD|dataGathered[2]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[1]             ; writeData:wrtSD|ledr[1]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[2]             ; writeData:wrtSD|ledr[2]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[3]             ; writeData:wrtSD|ledr[3]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[4]             ; writeData:wrtSD|ledr[4]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[5]             ; writeData:wrtSD|ledr[5]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[6]             ; writeData:wrtSD|ledr[6]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[7]             ; writeData:wrtSD|ledr[7]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[8]             ; writeData:wrtSD|ledr[8]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[9]             ; writeData:wrtSD|ledr[9]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[10]            ; writeData:wrtSD|ledr[10]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[11]            ; writeData:wrtSD|ledr[11]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[12]            ; writeData:wrtSD|ledr[12]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[13]            ; writeData:wrtSD|ledr[13]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[14]            ; writeData:wrtSD|ledr[14]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[15]            ; writeData:wrtSD|ledr[15]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[16]            ; writeData:wrtSD|ledr[16]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; writeData:wrtSD|ledr[17]            ; writeData:wrtSD|ledr[17]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.657      ;
+; 0.667 ; writeData:wrtSD|state[4]            ; writeData:wrtSD|state[4]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.933      ;
+; 0.667 ; writeData:wrtSD|state[7]            ; writeData:wrtSD|state[7]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.933      ;
+; 0.677 ; writeData:wrtSD|state[8]            ; writeData:wrtSD|state[8]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.943      ;
+; 0.682 ; writeData:wrtSD|state[10]           ; writeData:wrtSD|state[10]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.948      ;
+; 0.682 ; writeData:wrtSD|state[12]           ; writeData:wrtSD|state[12]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.948      ;
+; 0.685 ; writeData:wrtSD|state[24]           ; writeData:wrtSD|state[24]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.951      ;
+; 0.686 ; writeData:wrtSD|state[18]           ; writeData:wrtSD|state[18]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.952      ;
+; 0.686 ; writeData:wrtSD|state[20]           ; writeData:wrtSD|state[20]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.952      ;
+; 0.686 ; writeData:wrtSD|state[23]           ; writeData:wrtSD|state[23]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.952      ;
+; 0.686 ; writeData:wrtSD|state[26]           ; writeData:wrtSD|state[26]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.952      ;
+; 0.686 ; writeData:wrtSD|state[28]           ; writeData:wrtSD|state[28]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.952      ;
+; 0.795 ; writeData:wrtSD|state[29]           ; writeData:wrtSD|state[29]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.061      ;
+; 0.802 ; writeData:wrtSD|state[11]           ; writeData:wrtSD|state[11]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.068      ;
+; 0.803 ; writeData:wrtSD|state[27]           ; writeData:wrtSD|state[27]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.069      ;
+; 0.805 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|SD_CMD              ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; writeData:wrtSD|state[13]           ; writeData:wrtSD|state[13]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; writeData:wrtSD|state[15]           ; writeData:wrtSD|state[15]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.072      ;
+; 0.809 ; writeData:wrtSD|state[9]            ; writeData:wrtSD|state[9]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.075      ;
+; 0.814 ; writeData:wrtSD|state[14]           ; writeData:wrtSD|state[14]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.080      ;
+; 0.824 ; writeData:wrtSD|state[16]           ; writeData:wrtSD|state[16]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.090      ;
+; 0.826 ; writeData:wrtSD|state[21]           ; writeData:wrtSD|state[21]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.092      ;
+; 0.837 ; writeData:wrtSD|state[31]           ; writeData:wrtSD|state[31]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.103      ;
+; 0.844 ; writeData:wrtSD|state[3]            ; writeData:wrtSD|state[3]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845 ; writeData:wrtSD|state[5]            ; writeData:wrtSD|state[5]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.111      ;
+; 0.847 ; writeData:wrtSD|state[6]            ; writeData:wrtSD|state[6]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.113      ;
+; 0.860 ; writeData:wrtSD|state[22]           ; writeData:wrtSD|state[22]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.126      ;
+; 0.862 ; writeData:wrtSD|state[25]           ; writeData:wrtSD|state[25]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.128      ;
+; 0.925 ; writeData:wrtSD|currentAddress[25]  ; writeData:wrtSD|currentAddress[25]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.191      ;
+; 0.928 ; writeData:wrtSD|SD_CMD              ; writeData:wrtSD|SD_CMD              ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.194      ;
+; 1.058 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[17]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.004      ; 1.328      ;
+; 1.059 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[11]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.004      ; 1.329      ;
+; 1.063 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[5]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.004      ; 1.333      ;
+; 1.063 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[10]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.004      ; 1.333      ;
+; 1.075 ; writeData:wrtSD|cmd24[16]           ; writeData:wrtSD|cmd24[16]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.341      ;
+; 1.089 ; writeData:wrtSD|state[17]           ; writeData:wrtSD|state[17]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.355      ;
+; 1.107 ; writeData:wrtSD|state[19]           ; writeData:wrtSD|state[19]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.373      ;
+; 1.164 ; writeData:wrtSD|state[30]           ; writeData:wrtSD|state[30]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.430      ;
+; 1.178 ; writeData:wrtSD|state[29]           ; writeData:wrtSD|state[30]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.444      ;
+; 1.185 ; writeData:wrtSD|state[11]           ; writeData:wrtSD|state[12]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.451      ;
+; 1.186 ; writeData:wrtSD|state[27]           ; writeData:wrtSD|state[28]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.452      ;
+; 1.189 ; writeData:wrtSD|state[13]           ; writeData:wrtSD|state[14]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.455      ;
+; 1.192 ; writeData:wrtSD|state[9]            ; writeData:wrtSD|state[10]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.458      ;
+; 1.197 ; writeData:wrtSD|currentAddress[26]  ; writeData:wrtSD|currentAddress[26]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.463      ;
+; 1.197 ; writeData:wrtSD|state[14]           ; writeData:wrtSD|state[15]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.463      ;
+; 1.204 ; writeData:wrtSD|state[18]           ; writeData:wrtSD|state[19]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.470      ;
+; 1.205 ; writeData:wrtSD|currentAddress[17]  ; writeData:wrtSD|currentAddress[17]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.471      ;
+; 1.205 ; writeData:wrtSD|state[20]           ; writeData:wrtSD|state[21]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.471      ;
+; 1.207 ; writeData:wrtSD|state[16]           ; writeData:wrtSD|state[17]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.473      ;
+; 1.211 ; writeData:wrtSD|currentAddress[18]  ; writeData:wrtSD|currentAddress[18]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.477      ;
+; 1.214 ; writeData:wrtSD|state[21]           ; writeData:wrtSD|state[22]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 1.480      ;
+; 1.217 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|bitNum[2]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; -0.002     ; 1.481      ;
+; 1.217 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|bitNum[3]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; -0.002     ; 1.481      ;
+; 1.221 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|bitNum[0]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; -0.002     ; 1.485      ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                       ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|tempClk    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|tempClk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|tempClk|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|tempClk|clk           ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clkDivider:clkDiv|tempClk'                                                                           ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                     ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_CMD           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_CMD           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_DAT3          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_DAT3          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[23] ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                      ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; 10.671 ; 10.671 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                       ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; -5.151 ; -5.151 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 7.997 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 8.240 ; 8.240 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 8.165 ; 8.165 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 8.771 ; 8.771 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 7.717 ; 7.717 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 7.700 ; 7.700 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 8.564 ; 8.564 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 7.559 ; 7.559 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 7.566 ; 7.566 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 8.294 ; 8.294 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 8.464 ; 8.464 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 8.771 ; 8.771 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 6.902 ; 6.902 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 6.913 ; 6.913 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 6.955 ; 6.955 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 6.965 ; 6.965 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 7.131 ; 7.131 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 7.172 ; 7.172 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 7.361 ; 7.361 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 7.341 ; 7.341 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 7.221 ; 7.221 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 7.204 ; 7.204 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 7.997 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 7.997 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 8.240 ; 8.240 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 8.165 ; 8.165 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 6.902 ; 6.902 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 7.717 ; 7.717 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 7.700 ; 7.700 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 8.564 ; 8.564 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 7.559 ; 7.559 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 7.566 ; 7.566 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 8.294 ; 8.294 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 8.464 ; 8.464 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 8.771 ; 8.771 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 6.902 ; 6.902 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 6.913 ; 6.913 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 6.955 ; 6.955 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 6.965 ; 6.965 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 7.131 ; 7.131 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 7.172 ; 7.172 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 7.361 ; 7.361 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 7.341 ; 7.341 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 7.221 ; 7.221 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 7.204 ; 7.204 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 7.997 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 9.850 ;    ;    ; 9.850 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 9.850 ;    ;    ; 9.850 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Fast Model Setup Summary                           ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clkDivider:clkDiv|tempClk ; -4.622 ; -541.856      ;
+; CLOCK_50                  ; 0.177  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++----------------------------------------------------+
+; Fast Model Hold Summary                            ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; CLOCK_50                  ; -1.599 ; -1.599        ;
+; clkDivider:clkDiv|tempClk ; 0.215  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary             ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; CLOCK_50                  ; -1.380 ; -9.380        ;
+; clkDivider:clkDiv|tempClk ; -0.500 ; -167.000      ;
++---------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clkDivider:clkDiv|tempClk'                                                                                                                             ;
++--------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                            ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; -4.622 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.650      ;
+; -4.614 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.642      ;
+; -4.611 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.639      ;
+; -4.606 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.634      ;
+; -4.601 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.631      ;
+; -4.590 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.622      ;
+; -4.590 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.622      ;
+; -4.587 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.615      ;
+; -4.582 ; writeData:wrtSD|state[20]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.614      ;
+; -4.579 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.607      ;
+; -4.578 ; writeData:wrtSD|state[12]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.608      ;
+; -4.576 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.608      ;
+; -4.576 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.604      ;
+; -4.573 ; writeData:wrtSD|state[27]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.605      ;
+; -4.571 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.599      ;
+; -4.568 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.589      ;
+; -4.568 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.589      ;
+; -4.566 ; writeData:wrtSD|state[6]   ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.596      ;
+; -4.566 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.596      ;
+; -4.560 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.581      ;
+; -4.560 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.581      ;
+; -4.557 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.578      ;
+; -4.557 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.578      ;
+; -4.557 ; writeData:wrtSD|state[3]   ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.587      ;
+; -4.556 ; writeData:wrtSD|state[22]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.588      ;
+; -4.555 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.587      ;
+; -4.555 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.587      ;
+; -4.554 ; writeData:wrtSD|bitNum[8]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.582      ;
+; -4.552 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.580      ;
+; -4.552 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.573      ;
+; -4.552 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.011     ; 5.573      ;
+; -4.547 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 5.570      ;
+; -4.547 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.009     ; 5.570      ;
+; -4.547 ; writeData:wrtSD|state[20]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.579      ;
+; -4.546 ; writeData:wrtSD|bitNum[25] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.574      ;
+; -4.546 ; writeData:wrtSD|state[24]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.578      ;
+; -4.545 ; writeData:wrtSD|bitNum[11] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.573      ;
+; -4.544 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.572      ;
+; -4.544 ; writeData:wrtSD|state[25]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.576      ;
+; -4.543 ; writeData:wrtSD|state[12]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.573      ;
+; -4.541 ; writeData:wrtSD|bitNum[30] ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.573      ;
+; -4.541 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.569      ;
+; -4.539 ; writeData:wrtSD|bitNum[15] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.567      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[18]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[19]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[20]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[21]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[22]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[23]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[24]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[25]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[26]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[16]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|state[17]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.566      ;
+; -4.538 ; writeData:wrtSD|state[27]  ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.570      ;
+; -4.536 ; writeData:wrtSD|state[19]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.568      ;
+; -4.536 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.561      ;
+; -4.536 ; writeData:wrtSD|bitNum[28] ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.561      ;
+; -4.536 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.561      ;
+; -4.536 ; writeData:wrtSD|state[21]  ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.561      ;
+; -4.536 ; writeData:wrtSD|bitNum[13] ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.564      ;
+; -4.534 ; writeData:wrtSD|state[16]  ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.566      ;
+; -4.533 ; writeData:wrtSD|bitNum[18] ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; 0.000      ; 5.565      ;
+; -4.532 ; writeData:wrtSD|state[9]   ; writeData:wrtSD|state[31]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.562      ;
+; -4.531 ; writeData:wrtSD|state[6]   ; writeData:wrtSD|state[30]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.561      ;
+; -4.531 ; writeData:wrtSD|state[13]  ; writeData:wrtSD|state[29]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.002     ; 5.561      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[18]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[19]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[20]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[21]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[22]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[23]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[24]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[25]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[26]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[16]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.530 ; writeData:wrtSD|bitNum[12] ; writeData:wrtSD|state[17]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.558      ;
+; -4.528 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[21] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.528 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[22] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.528 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[23] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.528 ; writeData:wrtSD|bitNum[24] ; writeData:wrtSD|currentAddress[24] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.528 ; writeData:wrtSD|state[20]  ; writeData:wrtSD|currentAddress[25] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.528 ; writeData:wrtSD|state[20]  ; writeData:wrtSD|currentAddress[27] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.007     ; 5.553      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[18]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[19]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[20]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[21]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[22]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[23]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[24]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[25]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[26]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[27]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[28]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[16]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
+; -4.527 ; writeData:wrtSD|bitNum[26] ; writeData:wrtSD|state[17]          ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 1.000        ; -0.004     ; 5.555      ;
++--------+----------------------------+------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                           ;
++-------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                    ; To Node                      ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; 0.177 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.855      ;
+; 0.191 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.841      ;
+; 0.206 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.826      ;
+; 0.212 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.820      ;
+; 0.226 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.806      ;
+; 0.247 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.785      ;
+; 0.258 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.774      ;
+; 0.260 ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.772      ;
+; 0.261 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.771      ;
+; 0.271 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.761      ;
+; 0.282 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.750      ;
+; 0.293 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.739      ;
+; 0.296 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.736      ;
+; 0.308 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.724      ;
+; 0.317 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.715      ;
+; 0.328 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.704      ;
+; 0.328 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.704      ;
+; 0.331 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.701      ;
+; 0.339 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.693      ;
+; 0.343 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.689      ;
+; 0.349 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.683      ;
+; 0.363 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.669      ;
+; 0.363 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.669      ;
+; 0.377 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.655      ;
+; 0.378 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.654      ;
+; 0.417 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.615      ;
+; 0.477 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.555      ;
+; 0.501 ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.531      ;
+; 0.503 ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.529      ;
+; 0.503 ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.529      ;
+; 0.511 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.521      ;
+; 0.515 ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.517      ;
+; 0.516 ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.516      ;
+; 0.521 ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.511      ;
+; 0.665 ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[0] ; CLOCK_50                  ; CLOCK_50    ; 1.000        ; 0.000      ; 0.367      ;
+; 1.979 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 0.500        ; 1.673      ; 0.367      ;
+; 2.479 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 1.000        ; 1.673      ; 0.367      ;
++-------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                             ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+; -1.599 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; 0.000        ; 1.673      ; 0.367      ;
+; -1.099 ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk    ; clkDivider:clkDiv|tempClk ; CLOCK_50    ; -0.500       ; 1.673      ; 0.367      ;
+; 0.215  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[0] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.359  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.364  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.369  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[1] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.377  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.379  ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.403  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.555      ;
+; 0.463  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.615      ;
+; 0.502  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.503  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.655      ;
+; 0.517  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.517  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.531  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.537  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.689      ;
+; 0.541  ; clkDivider:clkDiv|counter[5] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.693      ;
+; 0.549  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.701      ;
+; 0.552  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.552  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.563  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[2] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.715      ;
+; 0.572  ; clkDivider:clkDiv|counter[3] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.724      ;
+; 0.584  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.736      ;
+; 0.587  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.739      ;
+; 0.598  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[3] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.750      ;
+; 0.609  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.761      ;
+; 0.619  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.771      ;
+; 0.620  ; clkDivider:clkDiv|counter[6] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.772      ;
+; 0.622  ; clkDivider:clkDiv|counter[2] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.774      ;
+; 0.633  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[4] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.785      ;
+; 0.654  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.806      ;
+; 0.668  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[5] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.820      ;
+; 0.674  ; clkDivider:clkDiv|counter[4] ; clkDivider:clkDiv|tempClk    ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.826      ;
+; 0.689  ; clkDivider:clkDiv|counter[1] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.841      ;
+; 0.703  ; clkDivider:clkDiv|counter[0] ; clkDivider:clkDiv|counter[6] ; CLOCK_50                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.855      ;
++--------+------------------------------+------------------------------+---------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clkDivider:clkDiv|tempClk'                                                                                                                                       ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock              ; Latch Clock               ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+; 0.215 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|replyStarted        ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[1]   ; writeData:wrtSD|responseFromSD[1]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[4]   ; writeData:wrtSD|responseFromSD[4]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[3]   ; writeData:wrtSD|responseFromSD[3]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[2]   ; writeData:wrtSD|responseFromSD[2]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[0]   ; writeData:wrtSD|responseFromSD[0]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[5]   ; writeData:wrtSD|responseFromSD[5]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|expectedResponse[0] ; writeData:wrtSD|expectedResponse[0] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|responseFromSD[6]   ; writeData:wrtSD|responseFromSD[6]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|expectedResponse[6] ; writeData:wrtSD|expectedResponse[6] ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[9]   ; writeData:wrtSD|currentAddress[9]   ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[10]  ; writeData:wrtSD|currentAddress[10]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[12]  ; writeData:wrtSD|currentAddress[12]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[13]  ; writeData:wrtSD|currentAddress[13]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[14]  ; writeData:wrtSD|currentAddress[14]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[15]  ; writeData:wrtSD|currentAddress[15]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[16]  ; writeData:wrtSD|currentAddress[16]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[19]  ; writeData:wrtSD|currentAddress[19]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[21]  ; writeData:wrtSD|currentAddress[21]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[22]  ; writeData:wrtSD|currentAddress[22]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[23]  ; writeData:wrtSD|currentAddress[23]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|currentAddress[24]  ; writeData:wrtSD|currentAddress[24]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|SD_DAT3             ; writeData:wrtSD|SD_DAT3             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[7]     ; writeData:wrtSD|dataGathered[7]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[6]     ; writeData:wrtSD|dataGathered[6]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[4]     ; writeData:wrtSD|dataGathered[4]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[5]     ; writeData:wrtSD|dataGathered[5]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[3]     ; writeData:wrtSD|dataGathered[3]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[1]     ; writeData:wrtSD|dataGathered[1]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|dataGathered[2]     ; writeData:wrtSD|dataGathered[2]     ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[1]             ; writeData:wrtSD|ledr[1]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[2]             ; writeData:wrtSD|ledr[2]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[3]             ; writeData:wrtSD|ledr[3]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[4]             ; writeData:wrtSD|ledr[4]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[5]             ; writeData:wrtSD|ledr[5]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[6]             ; writeData:wrtSD|ledr[6]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[7]             ; writeData:wrtSD|ledr[7]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[8]             ; writeData:wrtSD|ledr[8]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[9]             ; writeData:wrtSD|ledr[9]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[10]            ; writeData:wrtSD|ledr[10]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[11]            ; writeData:wrtSD|ledr[11]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[12]            ; writeData:wrtSD|ledr[12]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[13]            ; writeData:wrtSD|ledr[13]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[14]            ; writeData:wrtSD|ledr[14]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[15]            ; writeData:wrtSD|ledr[15]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[16]            ; writeData:wrtSD|ledr[16]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; writeData:wrtSD|ledr[17]            ; writeData:wrtSD|ledr[17]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.367      ;
+; 0.326 ; writeData:wrtSD|state[4]            ; writeData:wrtSD|state[4]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; writeData:wrtSD|state[7]            ; writeData:wrtSD|state[7]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.478      ;
+; 0.332 ; writeData:wrtSD|state[8]            ; writeData:wrtSD|state[8]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.484      ;
+; 0.334 ; writeData:wrtSD|state[10]           ; writeData:wrtSD|state[10]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.486      ;
+; 0.334 ; writeData:wrtSD|state[12]           ; writeData:wrtSD|state[12]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.486      ;
+; 0.337 ; writeData:wrtSD|state[18]           ; writeData:wrtSD|state[18]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.489      ;
+; 0.337 ; writeData:wrtSD|state[24]           ; writeData:wrtSD|state[24]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.489      ;
+; 0.338 ; writeData:wrtSD|state[20]           ; writeData:wrtSD|state[20]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.490      ;
+; 0.338 ; writeData:wrtSD|state[23]           ; writeData:wrtSD|state[23]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.490      ;
+; 0.338 ; writeData:wrtSD|state[26]           ; writeData:wrtSD|state[26]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.490      ;
+; 0.338 ; writeData:wrtSD|state[28]           ; writeData:wrtSD|state[28]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.490      ;
+; 0.357 ; writeData:wrtSD|state[29]           ; writeData:wrtSD|state[29]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; writeData:wrtSD|state[11]           ; writeData:wrtSD|state[11]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; writeData:wrtSD|state[27]           ; writeData:wrtSD|state[27]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.511      ;
+; 0.361 ; writeData:wrtSD|state[9]            ; writeData:wrtSD|state[9]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; writeData:wrtSD|state[13]           ; writeData:wrtSD|state[13]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; writeData:wrtSD|state[15]           ; writeData:wrtSD|state[15]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.513      ;
+; 0.364 ; writeData:wrtSD|state[14]           ; writeData:wrtSD|state[14]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; writeData:wrtSD|replyStarted        ; writeData:wrtSD|SD_CMD              ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; writeData:wrtSD|state[21]           ; writeData:wrtSD|state[21]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.519      ;
+; 0.370 ; writeData:wrtSD|state[16]           ; writeData:wrtSD|state[16]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.522      ;
+; 0.374 ; writeData:wrtSD|state[3]            ; writeData:wrtSD|state[3]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; writeData:wrtSD|state[5]            ; writeData:wrtSD|state[5]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; writeData:wrtSD|state[6]            ; writeData:wrtSD|state[6]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.527      ;
+; 0.407 ; writeData:wrtSD|currentAddress[25]  ; writeData:wrtSD|currentAddress[25]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.559      ;
+; 0.411 ; writeData:wrtSD|SD_CMD              ; writeData:wrtSD|SD_CMD              ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.563      ;
+; 0.416 ; writeData:wrtSD|state[22]           ; writeData:wrtSD|state[22]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.568      ;
+; 0.416 ; writeData:wrtSD|state[25]           ; writeData:wrtSD|state[25]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.568      ;
+; 0.416 ; writeData:wrtSD|state[31]           ; writeData:wrtSD|state[31]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.568      ;
+; 0.472 ; writeData:wrtSD|cmd24[16]           ; writeData:wrtSD|cmd24[16]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.624      ;
+; 0.474 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[17]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.002      ; 0.628      ;
+; 0.475 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[11]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.002      ; 0.629      ;
+; 0.479 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[5]             ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.002      ; 0.633      ;
+; 0.479 ; writeData:wrtSD|state[0]            ; writeData:wrtSD|ledr[10]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.002      ; 0.633      ;
+; 0.495 ; writeData:wrtSD|state[29]           ; writeData:wrtSD|state[30]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; writeData:wrtSD|state[11]           ; writeData:wrtSD|state[12]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; writeData:wrtSD|state[27]           ; writeData:wrtSD|state[28]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.649      ;
+; 0.499 ; writeData:wrtSD|state[9]            ; writeData:wrtSD|state[10]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; writeData:wrtSD|state[13]           ; writeData:wrtSD|state[14]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.651      ;
+; 0.502 ; writeData:wrtSD|state[14]           ; writeData:wrtSD|state[15]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.654      ;
+; 0.507 ; writeData:wrtSD|state[21]           ; writeData:wrtSD|state[22]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.659      ;
+; 0.508 ; writeData:wrtSD|state[18]           ; writeData:wrtSD|state[19]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.660      ;
+; 0.508 ; writeData:wrtSD|state[16]           ; writeData:wrtSD|state[17]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.660      ;
+; 0.509 ; writeData:wrtSD|state[20]           ; writeData:wrtSD|state[21]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.661      ;
+; 0.514 ; writeData:wrtSD|state[3]            ; writeData:wrtSD|state[4]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.666      ;
+; 0.515 ; writeData:wrtSD|state[6]            ; writeData:wrtSD|state[7]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.667      ;
+; 0.515 ; writeData:wrtSD|state[5]            ; writeData:wrtSD|state[6]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; writeData:wrtSD|state[8]            ; writeData:wrtSD|state[9]            ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.668      ;
+; 0.518 ; writeData:wrtSD|state[17]           ; writeData:wrtSD|state[17]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.670      ;
+; 0.521 ; writeData:wrtSD|state[26]           ; writeData:wrtSD|state[27]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.673      ;
+; 0.521 ; writeData:wrtSD|state[24]           ; writeData:wrtSD|state[25]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.673      ;
+; 0.522 ; writeData:wrtSD|state[28]           ; writeData:wrtSD|state[29]           ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.674      ;
+; 0.528 ; writeData:wrtSD|currentAddress[26]  ; writeData:wrtSD|currentAddress[26]  ; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 0.000        ; 0.000      ; 0.680      ;
++-------+-------------------------------------+-------------------------------------+---------------------------+---------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                       ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|counter[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|tempClk    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDivider:clkDiv|tempClk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|counter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|counter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; clkDiv|tempClk|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; clkDiv|tempClk|clk           ;
++--------+--------------+----------------+------------------+----------+------------+------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clkDivider:clkDiv|tempClk'                                                                           ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                     ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_CMD           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_CMD           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_DAT3          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|SD_DAT3          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitNum[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clkDivider:clkDiv|tempClk ; Rise       ; writeData:wrtSD|bitsGathered[23] ;
++--------+--------------+----------------+------------------+---------------------------+------------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                    ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; 5.439 ; 5.439 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+-------+-------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                       ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; -2.850 ; -2.850 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 3.964 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 4.408 ; 4.408 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 4.369 ; 4.369 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 4.770 ; 4.770 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 4.258 ; 4.258 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 4.252 ; 4.252 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 4.582 ; 4.582 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 4.166 ; 4.166 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 4.184 ; 4.184 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 4.488 ; 4.488 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 4.629 ; 4.629 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 4.770 ; 4.770 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 3.814 ; 3.814 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 3.823 ; 3.823 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 3.846 ; 3.846 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 3.850 ; 3.850 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 3.923 ; 3.923 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 3.951 ; 3.951 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 4.066 ; 4.066 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 4.057 ; 4.057 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 3.982 ; 3.982 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 3.993 ; 3.993 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 3.964 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 3.964 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 4.408 ; 4.408 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 4.369 ; 4.369 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 3.814 ; 3.814 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 4.258 ; 4.258 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 4.252 ; 4.252 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 4.582 ; 4.582 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 4.166 ; 4.166 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 4.184 ; 4.184 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 4.488 ; 4.488 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 4.629 ; 4.629 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 4.770 ; 4.770 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 3.814 ; 3.814 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 3.823 ; 3.823 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 3.846 ; 3.846 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 3.850 ; 3.850 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 3.923 ; 3.923 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 3.951 ; 3.951 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 4.066 ; 4.066 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 4.057 ; 4.057 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 3.982 ; 3.982 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 3.993 ; 3.993 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 3.964 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 5.573 ;    ;    ; 5.573 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 5.573 ;    ;    ; 5.573 ;
++------------+-------------+-------+----+----+-------+
+
+
++--------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                        ;
++----------------------------+-----------+--------+----------+---------+---------------------+
+; Clock                      ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------+-----------+--------+----------+---------+---------------------+
+; Worst-case Slack           ; -11.555   ; -2.558 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50                  ; -0.820    ; -2.558 ; N/A      ; N/A     ; -1.380              ;
+;  clkDivider:clkDiv|tempClk ; -11.555   ; 0.215  ; N/A      ; N/A     ; -0.500              ;
+; Design-wide TNS            ; -1396.134 ; -2.558 ; 0.0      ; 0.0     ; -176.38             ;
+;  CLOCK_50                  ; -4.172    ; -2.558 ; N/A      ; N/A     ; -9.380              ;
+;  clkDivider:clkDiv|tempClk ; -1391.962 ; 0.000  ; N/A      ; N/A     ; -167.000            ;
++----------------------------+-----------+--------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                      ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; 10.671 ; 10.671 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                       ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; Data Port ; Clock Port                ; Rise   ; Fall   ; Clock Edge ; Clock Reference           ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+; SD_DAT    ; clkDivider:clkDiv|tempClk ; -2.850 ; -2.850 ; Rise       ; clkDivider:clkDiv|tempClk ;
++-----------+---------------------------+--------+--------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 5.645 ; 5.645 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 7.997 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 8.240 ; 8.240 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 8.165 ; 8.165 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 6.372 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 8.771 ; 8.771 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 7.717 ; 7.717 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 7.700 ; 7.700 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 8.564 ; 8.564 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 7.559 ; 7.559 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 7.566 ; 7.566 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 8.294 ; 8.294 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 8.464 ; 8.464 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 8.771 ; 8.771 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 6.902 ; 6.902 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 6.913 ; 6.913 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 6.955 ; 6.955 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 6.965 ; 6.965 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 7.131 ; 7.131 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 7.172 ; 7.172 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 7.361 ; 7.361 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 7.341 ; 7.341 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 7.221 ; 7.221 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 7.204 ; 7.204 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 7.997 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 6.372 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                   ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; Data Port  ; Clock Port                ; Rise  ; Fall  ; Clock Edge ; Clock Reference           ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Rise       ; CLOCK_50                  ;
+; gpio_1[*]  ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+;  gpio_1[9] ; CLOCK_50                  ; 3.025 ; 3.025 ; Fall       ; CLOCK_50                  ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ; 3.964 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CMD     ; clkDivider:clkDiv|tempClk ; 4.408 ; 4.408 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_DAT3    ; clkDivider:clkDiv|tempClk ; 4.369 ; 4.369 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ; 3.143 ;       ; Rise       ; clkDivider:clkDiv|tempClk ;
+; ledr[*]    ; clkDivider:clkDiv|tempClk ; 3.814 ; 3.814 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[0]   ; clkDivider:clkDiv|tempClk ; 4.258 ; 4.258 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[1]   ; clkDivider:clkDiv|tempClk ; 4.252 ; 4.252 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[2]   ; clkDivider:clkDiv|tempClk ; 4.582 ; 4.582 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[3]   ; clkDivider:clkDiv|tempClk ; 4.166 ; 4.166 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[4]   ; clkDivider:clkDiv|tempClk ; 4.184 ; 4.184 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[5]   ; clkDivider:clkDiv|tempClk ; 4.488 ; 4.488 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[6]   ; clkDivider:clkDiv|tempClk ; 4.629 ; 4.629 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[7]   ; clkDivider:clkDiv|tempClk ; 4.770 ; 4.770 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[8]   ; clkDivider:clkDiv|tempClk ; 3.814 ; 3.814 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[9]   ; clkDivider:clkDiv|tempClk ; 3.823 ; 3.823 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[10]  ; clkDivider:clkDiv|tempClk ; 3.846 ; 3.846 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[11]  ; clkDivider:clkDiv|tempClk ; 3.850 ; 3.850 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[12]  ; clkDivider:clkDiv|tempClk ; 3.923 ; 3.923 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[13]  ; clkDivider:clkDiv|tempClk ; 3.951 ; 3.951 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[14]  ; clkDivider:clkDiv|tempClk ; 4.066 ; 4.066 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[15]  ; clkDivider:clkDiv|tempClk ; 4.057 ; 4.057 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[16]  ; clkDivider:clkDiv|tempClk ; 3.982 ; 3.982 ; Rise       ; clkDivider:clkDiv|tempClk ;
+;  ledr[17]  ; clkDivider:clkDiv|tempClk ; 3.993 ; 3.993 ; Rise       ; clkDivider:clkDiv|tempClk ;
+; SD_CLK     ; clkDivider:clkDiv|tempClk ;       ; 3.964 ; Fall       ; clkDivider:clkDiv|tempClk ;
+; gpio_1[*]  ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
+;  gpio_1[3] ; clkDivider:clkDiv|tempClk ;       ; 3.143 ; Fall       ; clkDivider:clkDiv|tempClk ;
++------------+---------------------------+-------+-------+------------+---------------------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 9.850 ;    ;    ; 9.850 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SD_DAT     ; gpio_1[7]   ; 5.573 ;    ;    ; 5.573 ;
++------------+-------------+-------+----+----+-------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                   ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 27334007 ; 0        ; 0        ; 0        ;
+; clkDivider:clkDiv|tempClk ; CLOCK_50                  ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                  ; CLOCK_50                  ; 35       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                    ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+; clkDivider:clkDiv|tempClk ; clkDivider:clkDiv|tempClk ; 27334007 ; 0        ; 0        ; 0        ;
+; clkDivider:clkDiv|tempClk ; CLOCK_50                  ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                  ; CLOCK_50                  ; 35       ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 68    ; 68   ;
+; Unconstrained Output Ports      ; 24    ; 24   ;
+; Unconstrained Output Port Paths ; 24    ; 24   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jul 19 18:46:14 2014
+Info: Command: quartus_sta writeToSD -c writeToSD
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'writeToSD.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+    Info (332105): create_clock -period 1.000 -name clkDivider:clkDiv|tempClk clkDivider:clkDiv|tempClk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -11.555
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -11.555     -1391.962 clkDivider:clkDiv|tempClk 
+    Info (332119):    -0.820        -4.172 CLOCK_50 
+Info (332146): Worst-case hold slack is -2.558
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.558        -2.558 CLOCK_50 
+    Info (332119):     0.391         0.000 clkDivider:clkDiv|tempClk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -9.380 CLOCK_50 
+    Info (332119):    -0.500      -167.000 clkDivider:clkDiv|tempClk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.622
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.622      -541.856 clkDivider:clkDiv|tempClk 
+    Info (332119):     0.177         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is -1.599
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.599        -1.599 CLOCK_50 
+    Info (332119):     0.215         0.000 clkDivider:clkDiv|tempClk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -9.380 CLOCK_50 
+    Info (332119):    -0.500      -167.000 clkDivider:clkDiv|tempClk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 513 megabytes
+    Info: Processing ended: Sat Jul 19 18:46:15 2014
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

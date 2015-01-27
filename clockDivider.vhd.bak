@@ -1,0 +1,19 @@
+--Clock Divider
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity clkDivider is
+port(
+	clockIn: in STD_LOGIC;
+	reset: in STD_LOGIC;
+	clockOut: out STD_LOGIC;
+);
+end clkDivider;
+
+architecture clkDivider of clkDivider is
+begin
+	signal temp: STD_LOGIC;
+	signal counter: integer := 0;
+	process(clockIn, reset)
+	begin
+		if(clockIn
